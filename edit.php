@@ -3,7 +3,7 @@
 
 <?php
   echo"Hello World";
-$link=mysqli_connect("localhost","root","spot1234","school") or die(mysql_error());
+$link=mysqli_connect("localhost","root","mmmmmmmm","school") or die(mysql_error());
 
 $query="SELECT * FROM student WHERE sno='".$_GET['sno']."'";
 

@@ -5,10 +5,11 @@ table, th,td{'border:1px solid';}
 h1   {color: GREEN;}
 </style>
 </head>
+<h1>TEST</h1>
 <a href="insert.php">Add record</a>
 <?php
 
-$link=mysqli_connect("localhost","root","spot1234","school") or die(mysql_error());
+$link=mysqli_connect("localhost","root","mmmmmmmm","school") or die(mysql_error());
 
 $query="SELECT * FROM student";
 $result=mysqli_query($link,$query) or die(mysql_error());
@@ -20,8 +21,12 @@ $result=mysqli_query($link,$query) or die(mysql_error());
   <td><?=$row['sno']?></td>
     <td><?=$row['sname']?></td>
 	  <td><?=$row['ssex']?></td>
+	  
 	  <td><a href="edit.php?sno=<?=$row['sno']?>">Edit</a>
-	  <a href="delete.php?sno=<?=$row['sno']?>">Delete</a></td>
+	  
+	  <a href="delete.php?sno=<?=$row['sno']?>" 
+	  onclick="return confirm('Reconfirm Delete?')">Delete</a></td>
+	  
   </tr>
 <?php
 }

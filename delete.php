@@ -1,26 +1,15 @@
-<html><head></head><body style='align:center'>
-<form method="post">
-
 <?php
   echo"Caution! to delete...";
-$link=mysqli_connect("localhost","root","spot1234","school") or die(mysql_error());
+$link=mysqli_connect("localhost","root","mmmmmmmm","school") or die(mysql_error());
 
-$query="SELECT * FROM student WHERE sno='".$_GET['sno']."'";
+$query="DELETE FROM student WHERE sno='".$_GET['sno']."'";
 
-$result=mysqli_query($link,$query) or die(mysql_error());
-while ($row=mysqli_fetch_array($result)){
+if (mysqli_query($link,$query) ) {
+
+echo "<script>alert('Delete成功');location.href='list.php'</script>";
+ } else {
+	echo "<script>alert('DELETE Failed');history.go(-1)</script>";
+ }
 
 ?>
 
-ID<input type="text" name="sno" value=<?=$row['sno']?>><br>
-Your Name <input type="text" name="sname" value=<?=$row['sname']?>></input><br>
-Gender <input type="radio" name="ssex" value=<??>>Male</input><br>
-<input type="radio" name="ssex">Female</input><br>
-<input type="submit" value="Delete"</input>
-
-
-<?php
-}
-?>
-</form>
-</body></html>

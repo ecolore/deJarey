@@ -5,7 +5,7 @@
 Annie
 
 <?php
-$link=mysqli_connect("localhost","root","spot1234","school") or die(mysql_error());
+$link=mysqli_connect("localhost","root","mmmmmmmm","school") or die(mysql_error());
 
 $query="UPDATE student SET sno='".$_POST['sno'];
 $query.="',sname='".$_POST['sname']."',ssex='".$_POST['ssex']."' WHERE sno='".$_POST['o_sno'] ."'";
